@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#eeeeee" >
+ 
+    <LinearLayout
+        android:id="@+id/tabcontainer"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal" >
+ 
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_left" >
+		<LinearLayout
+		    android:id="@+id/btn"
+		    android:layout_width="wrap_content"
+		    android:layout_height="fill_parent"
+		    android:gravity="top"
+		    android:orientation="vertical" >
+            <Button
+                android:id="@+id/btn_search"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tab_search"
+                android:onClick="tabHandler" />
+
+            <Button
+                android:id="@+id/btn_list"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tab_list" 
+                android:onClick="tabHandler" />
+
+            <Button
+                android:id="@+id/btn_favorite"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tab_favorite"
+                android:onClick="tabHandler" />
+
+            <Button
+                android:id="@+id/btn_contact"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tab_contact"
+                android:onClick="tabHandler" />
+
+            <Button
+                android:id="@+id/btn_info"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tab_info"
+                android:onClick="tabHandler" />
+		</LinearLayout>            
+            
+        </TabWidget>
+ 
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fadeScrollbars="false"
+            android:fadingEdge="none"
+            android:scrollbars="@null" >
+        </FrameLayout>
+    </LinearLayout>
+ 
+</TabHost>

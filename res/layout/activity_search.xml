@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    xmlns:tools="http://schemas.android.com/tools"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:orientation="vertical"
+	    android:layout_marginLeft="5dp"
+	    tools:context=".Search"
+	    tools:ignore="ContentDescription" >
+
+	<LinearLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal" >
+
+		<EditText
+		    android:id="@+id/e_search"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1"
+		    android:background="@drawable/edit_search_custom"
+		    android:hint="@string/vi_search_hint"
+		    android:imeOptions="actionSearch"
+		    android:padding="8dp"
+		    android:singleLine="true" />
+
+		<ImageView
+		    android:id="@+id/img_search"
+		    android:layout_width="40dp"
+		    android:layout_height="41dp"
+		    android:layout_marginLeft="-1dp"
+		    android:background="@drawable/edit_search_custom"
+		    android:padding="5dp"
+		    android:src="@android:drawable/ic_menu_search" />
+
+	</LinearLayout>
+
+	<TableLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent" >
+		<TextView
+		    android:id="@+id/txt_info"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:text="@string/vi_search_guild"
+		    android:textColor="@color/text_blue" />
+
+	    <TableRow
+	        android:id="@+id/tableRow1"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent" >
+			<ListView
+		        android:id="@+id/listKara"
+		        android:layout_width="fill_parent"
+		        android:layout_height="fill_parent"
+		        android:layout_weight="1" >
+		    </ListView>	     
+		    <LinearLayout
+		        android:layout_width="20dp"
+		        android:layout_height="fill_parent"
+		        android:orientation="vertical"
+		        android:background="@drawable/bg_indexable" >
+		        
+		    </LinearLayout>   
+	    </TableRow>
+	</TableLayout>
+
+</LinearLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Karaoke List Pro</string>
+    <string name="menu_settings">Cài đặt</string>
+    <string name="title_activity_search">Tìm bài hát</string>
+    <string name="title_activity_list">Danh sách bài hát</string>
+    <string name="title_activity_favorite">Yêu thích</string>
+    <string name="title_activity_contact">Liên hệ</string>
+    <string name="title_activity_info">Thông tin</string>
+    <string name="vi_search_hint">Nhập từ khoá</string>
+    <string name="vi_list_guild">Nhấn vào để đổi danh sách.</string>
+    <string name="vi_search_guild">Tên bài hát, *mã số, @tác giả</string>
+    <string name="title_activity_detail">Detail</string>
+    <string name="vi_author">Sáng tác</string>
+    <string name="vi_lyric">Lời bài hát</string>
+    <string name="vi_play">Nghe thử</string>
+    <string name="vi_pause">Tạm dừng</string>
+    <string name="vi_download">Download Beat</string>
+    <string name="todo">TODO</string>
+    <string name="form_fullname">Họ tên *</string>
+    <string name="btn_submit">GỬI</string>
+    <string name="form_phone">Số điện thoại</string>
+    <string name="form_email">Email</string>
+    <string name="form_msg">Nội dung</string>
+    <string name="form_fullname_hint">Tên đầy đủ</string>
+    <string name="form_phone_hint">VD: 0932626007</string>
+    <string name="form_email_hint">Email bạn đang sử dụng</string>
+    <string name="form_msg_hint">Bạn có thể gửi kèm địa chỉ nếu muốn đặt thiết bị điều khiển hồng ngoại</string>    
+
+</resources>

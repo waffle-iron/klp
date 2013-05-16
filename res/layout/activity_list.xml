@@ -1,0 +1,51 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginLeft="10dp"
+    tools:context=".List" >
+
+    <Spinner
+        android:id="@+id/category"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:padding="5dp" />
+
+		<TextView
+		    android:id="@+id/txt_info"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:textColor="@color/text_blue"
+		    android:paddingTop="10dp"
+		    android:text="@string/vi_list_guild"
+		    android:background="@drawable/bg_narrow_up" />    
+	    <TableRow
+	        android:id="@+id/tableRow1"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent" >
+			<ListView
+		        android:id="@+id/listKara"
+		        android:layout_width="fill_parent"
+		        android:layout_height="fill_parent"
+		        android:layout_weight="1" >
+		    </ListView>	     
+		    <LinearLayout
+		        android:layout_width="20dp"
+		        android:layout_height="fill_parent"
+		        android:orientation="vertical"
+		        android:background="@drawable/bg_indexable"
+		        android:gravity="right"
+		        android:paddingRight="2dp" >
+
+		        <TextView
+		            android:id="@+id/index_0"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="#"
+		            tools:ignore="HardcodedText" >
+		            
+		        </TextView>
+		    </LinearLayout>   
+	    </TableRow>
+</TableLayout>

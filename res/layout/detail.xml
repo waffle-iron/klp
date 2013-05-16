@@ -1,0 +1,150 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".Detail"
+    tools:ignore="ContentDescription" >
+
+    <LinearLayout
+        android:id="@+id/tableRow1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_title"
+        android:orientation="vertical" >
+
+		    <TextView
+		        android:id="@+id/txt_id"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:gravity="center"
+		        android:paddingBottom="5dp"
+		        android:paddingTop="10dp"
+		        android:textColor="@color/blue_dark"
+		        android:textSize="35sp"
+		        tools:ignore="SelectableText" />
+
+		    <TextView
+		        android:id="@+id/txt_name"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:gravity="center"
+		        android:paddingBottom="10dp"
+		        android:textColor="@color/song_name"
+		        android:textSize="18sp"
+		        tools:ignore="SelectableText" />
+        
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|center_horizontal" >
+
+            <TextView
+                android:id="@+id/lang_author"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/vi_author" >
+        
+            </TextView>
+            <TextView
+                android:id="@+id/txt_author"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/vi_author" >
+        
+            </TextView>                    
+        </TableRow>
+        <LinearLayout
+            android:id="@+id/tableRow3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|center_horizontal"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imgFav"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp" 
+                android:contentDescription="@string/todo"/>
+
+	<ImageButton 
+		android:id="@+id/ButtonTestPlayPause" 
+		android:layout_height="wrap_content" 
+		android:layout_width="match_parent"
+		android:src="@drawable/button_play"/>
+
+	<SeekBar
+	    android:id="@+id/SeekBarTestPlay"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" />
+
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_horizontal" >
+            <Button
+                android:id="@+id/btn_download"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:background="@drawable/down_icon" />
+            <Button
+                android:id="@+id/btn_download_beat"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:background="@drawable/down_beat" />
+            <Button
+                android:id="@+id/btn_bug"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:background="@drawable/bug" />                                   
+    
+</LinearLayout>
+            
+	            <TextView
+	                android:id="@+id/lang_lyric"
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="10dp"
+	                android:text="@string/vi_lyric" >
+	                
+	            </TextView>
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+            	            <TextView
+	                android:id="@+id/txt_lyric"
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:paddingLeft="10dp"
+	                android:paddingRight="10dp"
+	                tools:ignore="SelectableText" >
+	                
+	            </TextView> 	
+            </LinearLayout>
+        </ScrollView>             
+
+			
+        </LinearLayout>
+
+
+        
+    </LinearLayout>
+	
+</LinearLayout>
