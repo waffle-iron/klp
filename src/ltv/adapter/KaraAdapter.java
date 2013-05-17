@@ -75,14 +75,14 @@ public class KaraAdapter extends ArrayAdapter<Song> {
 				if (res) {
 					if (isFav) {
 						iv.setImageResource(R.drawable.ic_liked);
-						Util.showMessage(context, "???? th??ch");
+						Util.showMessage(context, "Đã thích");
 						isFav = false;
 					} else {
 						iv.setImageResource(R.drawable.ic_like);
 						isFav = true;
 					}
 				} else {
-					Util.showMessage(context, "L???i");
+					Util.showMessage(context, "Lỗi");
 				}
 			}
 		});		

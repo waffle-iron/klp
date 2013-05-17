@@ -9,6 +9,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -16,6 +17,7 @@ import android.util.Log;
 
 @SuppressLint("SdCardPath")
 public class DBHandler extends SQLiteOpenHelper {
+	private String TAG = DBHandler.class.getSimpleName();
 	public static String DB_PATH = "";
 	private static String DB_NAME = "kara.sqlite";
 	private SQLiteDatabase sqlDb; 
@@ -52,9 +54,31 @@ public class DBHandler extends SQLiteOpenHelper {
 	        try {
 	            copyDataBase(DB_NAME);
 	        } catch (Exception e) {
-	        	Log.e("DA XAY RA LOI ROI", e.getMessage());
+	        	Log.e(TAG, "createDatabse -> Copy failed!");
 	            throw new Error("Error copying database");
 	        }
+	    } else {
+	    	openDataBase();
+	    	boolean isExist = false;
+	    	Cursor cursor = sqlDb.rawQuery("select DISTINCT tbl_name from sqlite_master where tbl_name = 'config'", null);
+	    	if (cursor != null) {
+	    		isExist = true;
+	    		cursor.close();
+	    	} else {
+	    		isExist = false;
+	    	}
+	    	close();
+	    	Log.d(TAG, isExist + "");
+	    	if (!isExist) {
+	    		this.context.deleteDatabase(DB_NAME);
+		        try {
+		        	Log.d(TAG, "createDatabase when database has existed");
+		            copyDataBase(DB_NAME);
+		        } catch (Exception e) {
+		        	Log.e(TAG, "createDatabse -> Copy failed!");
+		            throw new Error("Error copying database");
+		        }	    		
+	    	}
 	    }
 	}	
 	/**
@@ -81,10 +105,9 @@ public class DBHandler extends SQLiteOpenHelper {
 	            myOutput.write(buffer, 0, length);
 	        }
 	    } catch (FileNotFoundException e) {
-	    	Log.i("LTV-FileNotFound: ", e.getMessage());
-	        e.printStackTrace();
+	    	Log.e(TAG, "copyDatabase -> File not found.");
 	    } catch (IOException e) {
-	        e.printStackTrace();
+	    	Log.e(TAG, "copyDatabase");
 	    } finally {
 	          //Close the streams
 	        try {
@@ -102,14 +125,14 @@ public class DBHandler extends SQLiteOpenHelper {
 	    	String myPath = DB_PATH + DB_NAME;
 	        File dbFile = new File(myPath); 
 	        checkDB = dbFile.isFile();
-	        Log.i("LTV-CheckDataBase: ", String.valueOf(checkDB));
+	        Log.d(TAG, "checkDatabase: " + String.valueOf(checkDB));
 	        try {
 		        File fTmp = new File(DB_PATH);
 		        if (!fTmp.exists()) {
 		        	fTmp.mkdir();
 		        }
 	        } catch (Exception e) {
-	        	Log.i("LTV-Error-CreateFolder: ", e.getMessage());
+	        	Log.e(TAG, "checkDatabase" + e.getMessage());
 	        }
 	    }catch(SQLiteException e){}
 	    return checkDB;
